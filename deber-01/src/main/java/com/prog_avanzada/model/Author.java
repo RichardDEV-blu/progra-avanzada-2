@@ -1,14 +1,12 @@
 package com.prog_avanzada.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Builder
+@Getter
 public class Author {
 
     private Long id;

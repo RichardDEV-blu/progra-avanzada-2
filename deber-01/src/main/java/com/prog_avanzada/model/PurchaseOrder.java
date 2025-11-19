@@ -1,13 +1,13 @@
 package com.prog_avanzada.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import java.time.LocalDateTime;
 
-@Data
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class PurchaseOrder {
 
     private Long id;

@@ -53,12 +53,23 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public boolean update(Customer entity) {
-        return false;
+
+      long rowsAffected = this.dbClient.execute().createUpdate("UPDATE customer SET name = ?, email = ?, version = ? WHERE id = ?")
+        .params(entity.getName(), entity.getEmail(), entity.getVersion(), entity.getId())
+        .execute();
+
+      return rowsAffected > 0;
+
     }
 
     @Override
     public boolean deleteById(Long id) {
-        return false;
+
+      long rowsAffected = this.dbClient.execute().createDelete("DELETE FROM customer WHERE id = ?")
+        .params(id)
+        .execute();
+
+      return rowsAffected > 0;
     }
 
     private Customer mapToCustomer(DbRow row) {

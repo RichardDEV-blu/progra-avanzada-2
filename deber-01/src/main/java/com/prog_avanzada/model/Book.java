@@ -1,14 +1,11 @@
 package com.prog_avanzada.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Builder
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
 public class Book {
 
     private String isbn;

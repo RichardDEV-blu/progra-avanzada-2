@@ -60,8 +60,8 @@ CREATE TABLE lineitem (
     order_id BIGINT,
     idx INTEGER,
     quantity INTEGER,
-    book_isbn_isbn VARCHAR(255),
+    book_isbn VARCHAR(255),
     PRIMARY KEY (order_id, idx),
     CONSTRAINT fk_lineitem_order FOREIGN KEY (order_id) REFERENCES purchaseorder (id),
-    CONSTRAINT fk_lineitem_book FOREIGN KEY (book_isbn_isbn) REFERENCES book (isbn)
+    CONSTRAINT fk_lineitem_book FOREIGN KEY (book_isbn) REFERENCES book (isbn)
 );

@@ -1,12 +1,11 @@
 package com.prog_avanzada.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class LineItem {
 
     private Long orderId;
