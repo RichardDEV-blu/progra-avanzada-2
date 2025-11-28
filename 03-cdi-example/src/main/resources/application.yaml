@@ -1,6 +1,0 @@
-db:
-  sourcedb: "jdbc"
-  connection:
-    url: "jdbc:postgresql://localhost:5432/prograavanzada"
-    username: "postgres"
-    password: "labcom,2015"
