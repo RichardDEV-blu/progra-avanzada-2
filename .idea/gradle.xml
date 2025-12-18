@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/01-cdi-ejemplo" />
+            <option value="$PROJECT_DIR$/01-jpa-example" />
             <option value="$PROJECT_DIR$/02-cdi-example" />
             <option value="$PROJECT_DIR$/03-cdi-example" />
             <option value="$PROJECT_DIR$/deber-01" />
