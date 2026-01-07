@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.TableGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,7 +25,16 @@ import java.util.List;
 @Entity
 public class Author {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @TableGenerator(
+      name = "author_gen",
+      table = "id_gen",
+      pkColumnName = "gen_name",
+      valueColumnName = "gen_value",
+      pkColumnValue = "author_id",
+      initialValue = 1,
+      allocationSize = 1
+  )
+  @GeneratedValue(generator = "author_gen")
   private Long id;
 
   private String name;

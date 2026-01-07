@@ -8,12 +8,17 @@
         <class>com.programacion.avanzada.domain.entity.PurchaseOrder</class>
         <class>com.programacion.avanzada.domain.entity.LineItem</class>
 
-        <properties>
-            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/prograavanzada"/>
-            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
-            <property name="jakarta.persistence.jdbc.password" value="labcom,2015"/>
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
-        </properties>
+<properties>
+    <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+    <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/prograavanzada"/>
+    <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+    <property name="jakarta.persistence.jdbc.password" value="labcom,2015"/>
+
+    <property name="javax.persistence.schema-generation.scripts.action" value="create"/>
+
+    <property name="javax.persistence.schema-generation.scripts.create-target" value="mibase.sql"/>
+    
+    <property name="javax.persistence.schema-generation.create-source" value="metadata"/>
+</properties>
     </persistence-unit>
 </persistence>

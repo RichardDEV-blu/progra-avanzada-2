@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: app_postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "labcom,2015"
+      POSTGRES_DB: prograavanzada
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./docker/initdb:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d prograavanzada"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+
+
+#para levantar la base de datos, usar:
+#docker compose -f docker-compose-db.yml up -d
+#docker compose -f docker-compose-db.yml logs -f postgres
+#docker compose -f docker-compose-db.yml down -v
