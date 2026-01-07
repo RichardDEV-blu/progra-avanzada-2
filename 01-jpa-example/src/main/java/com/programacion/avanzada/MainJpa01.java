@@ -11,7 +11,7 @@ public class MainJpa01 {
       IAuthorRepository authorRepo = container.select(IAuthorRepository.class).get();
 
       // Crear y guardar un autor
-      Author author = Author.builder().name("Gabriel García Márquez").build();
+      Author author = Author.builder().name("Gabriel Márquez").build();
       authorRepo.save(author);
 
       System.out.println("Autor guardado (objeto): " + author);
